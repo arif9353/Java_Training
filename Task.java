@@ -133,8 +133,6 @@ class Student{
     public void update(){
         System.out.println("Enter the roll number:");
         int l = sc.nextInt();
-        System.out.println("Enter what data to update:1 name, 2 mobile, 3 address");
-        int choice6 = sc.nextInt();
         int flag=0;
         int arif =0;
         for(int u =0; u<i;u++){
@@ -147,6 +145,8 @@ class Student{
             System.out.println("Enter a valid roll number");
         }
         else{
+            System.out.println("Enter what data to update:1 name, 2 mobile, 3 address");
+            int choice6 = sc.nextInt();
             switch(choice6){
                 case 1:
                     System.out.println("Enter the name:");
@@ -171,7 +171,7 @@ class Student{
         int flag=0;
         for(int u =0; u<i;u++){
             if(rollno[u]==l){
-                flag = u;
+                flag = 1;
                 for(int g = u;g<i-1;g++){
                     rollno[g]=rollno[g+1];
                     mno[g]=mno[g+1];
@@ -180,9 +180,9 @@ class Student{
                 }
                 i--;
             }
-            else{
-                System.out.println("Enter a valid roll number");
-            }
+        }
+        if(flag!=1){
+            System.out.println("Enter a valid roll number");
         }
     }
 }
